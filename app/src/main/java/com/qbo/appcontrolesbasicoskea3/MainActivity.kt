@@ -38,6 +38,28 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         chkotros.setOnClickListener {
             agregarListaDePreferenciasSeleccionadas(it)
         }
+        btnregistrar.setOnClickListener {
+            if(validarFormulario(it)){
+                val infopersona = "${etnombre.text.toString()} - ${etapellido.text.toString()} - " +
+                        "${obtenerGeneroSeleccionado()} - ${obtnerPreferenciasSeleccionadas()} - " +
+                        "$estadocivil - ${swemail.isChecked.toString()}"
+                listapersonas.add(infopersona)
+                setearControles()
+            }
+        }
+    }
+    fun setearControles(){
+        listapreferencias.clear()
+        etnombre.setText("")
+        etapellido.setText("")
+        swemail.isChecked = false
+        chkdeporte.isChecked = false
+        chkdibujo.isChecked = false
+        chkotros.isChecked = false
+        rggenero.clearCheck()
+        spestadocivil.setSelection(0)
+        etnombre.isFocusableInTouchMode = true
+        etnombre.requestFocus()
     }
     fun validarFormulario(vista: View): Boolean{
         var respuesta = false
