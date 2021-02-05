@@ -3,6 +3,7 @@ package com.qbo.appcontrolesbasicoskea3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_lista.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,6 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        ArrayAdapter.createFromResource(this,
+            R.array.estado_civil_array,
+            android.R.layout.simple_spinner_item
+        ).also {
+            adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spestadocivil.adapter = adapter
+        }
 
     }
 
