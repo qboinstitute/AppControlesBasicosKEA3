@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CheckBox
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_lista.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -27,7 +28,46 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spestadocivil.adapter = adapter
         }
+        spestadocivil.onItemSelectedListener = this
+        chkdeporte.setOnClickListener {
+            agregarListaDePreferenciasSeleccionadas(it)
+        }
+        chkdibujo.setOnClickListener {
+            agregarListaDePreferenciasSeleccionadas(it)
+        }
+        chkotros.setOnClickListener {
+            agregarListaDePreferenciasSeleccionadas(it)
+        }
+    }
 
+    private fun agregarListaDePreferenciasSeleccionadas(vista: View) {
+        if(vista is CheckBox){
+            val valorcheck: Boolean = vista.isChecked
+            /*if(valorcheck)
+                listapreferencias.add(vista.text.toString())
+            else
+                listapreferencias.remove(vista.text.toString())*/
+            when(vista.id){
+                R.id.chkdeporte -> {
+                    if(valorcheck)
+                        listapreferencias.add(vista.text.toString())
+                    else
+                        listapreferencias.remove(vista.text.toString())
+                }
+                R.id.chkdibujo -> {
+                    if(valorcheck)
+                        listapreferencias.add(vista.text.toString())
+                    else
+                        listapreferencias.remove(vista.text.toString())
+                }
+                R.id.chkotros -> {
+                    if(valorcheck)
+                        listapreferencias.add(vista.text.toString())
+                    else
+                        listapreferencias.remove(vista.text.toString())
+                }
+            }
+        }
     }
 
     fun validarPreferencias():Boolean{
