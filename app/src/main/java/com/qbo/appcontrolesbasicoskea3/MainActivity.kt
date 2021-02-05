@@ -1,5 +1,6 @@
 package com.qbo.appcontrolesbasicoskea3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -46,6 +47,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 listapersonas.add(infopersona)
                 setearControles()
             }
+        }
+        btnlistar.setOnClickListener {
+            val intentlista = Intent(this, ListaActivity::class.java).apply {
+                putExtra("listapersonas", listapersonas)
+            }
+            startActivity(intentlista)
         }
     }
     fun setearControles(){
