@@ -14,4 +14,5 @@
     <string name="valswemail">¿Enviar email?</string>
     <string name="valbtnlistar">LISTAR PERSONAS</string>
     <string name="valbtnregistrar">REGISTRAR PERSONA</string>
+    <string name="valtvtitulolista">LISTA DE PERSONAS</string>
 </resources>
