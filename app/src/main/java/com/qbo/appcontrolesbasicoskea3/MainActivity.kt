@@ -39,6 +39,40 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             agregarListaDePreferenciasSeleccionadas(it)
         }
     }
+    fun validarFormulario(vista: View): Boolean{
+        var respuesta = false
+        if(!validarNombreApellido()){
+            enviarMensaje(vista, getString(R.string.valerrornomape))
+        }else if(!validarGenero()){
+            enviarMensaje(vista, getString(R.string.valerrorgenero))
+        }else if(!validarEstadoCivil()){
+            enviarMensaje(vista, getString(R.string.valerrorestadocivil))
+        }else if(!validarPreferencias()){
+            enviarMensaje(vista, getString(R.string.valerrorpreferencias))
+        }else{
+            respuesta = true
+        }
+        return respuesta
+    }
+    fun obtnerPreferenciasSeleccionadas() : String{
+        var preferencias = ""
+        for (preferencia in listapreferencias){
+            preferencias += "$preferencia - "
+        }
+        return preferencias
+    }
+    fun obtenerGeneroSeleccionado(): String{
+        var genero = ""
+        when(rggenero.checkedRadioButtonId){
+            R.id.rbtnmasculino -> {
+                genero = rbtnmasculino.text.toString()
+            }
+            R.id.rbtnfemenino -> {
+                genero = rbtnfemenino.text.toString()
+            }
+        }
+        return genero
+    }
 
     private fun agregarListaDePreferenciasSeleccionadas(vista: View) {
         if(vista is CheckBox){

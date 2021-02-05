@@ -15,4 +15,8 @@
     <string name="valbtnlistar">LISTAR PERSONAS</string>
     <string name="valbtnregistrar">REGISTRAR PERSONA</string>
     <string name="valtvtitulolista">LISTA DE PERSONAS</string>
+    <string name="valerrornomape">Ingrese su nombre y apellido</string>
+    <string name="valerrorgenero">Seleccione un género.</string>
+    <string name="valerrorestadocivil">Seleccione su estado civil.</string>
+    <string name="valerrorpreferencias">Seleccione al menos una preferencia.</string>
 </resources>
