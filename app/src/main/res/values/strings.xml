@@ -3,4 +3,15 @@
     <string name="valtitulo">REGISTRO DE PERSONA</string>
     <string name="valetnombre">Ingrese su nombre</string>
     <string name="valetapellido">Ingrese su apellido</string>
+    <string name="valtvgenero">Seleccione su género:</string>
+    <string name="valrbtnmasculino">Masculino</string>
+    <string name="valrbtnfemenino">Femenino</string>
+    <string name="valtvestadocivil">Seleccione su estado civil:</string>
+    <string name="valtvpreferencia">Seleccione sus preferencias:</string>
+    <string name="valchkdeporte">Deporte</string>
+    <string name="valchkdibujo">Dibujo</string>
+    <string name="valchkotros">Otros</string>
+    <string name="valswemail">¿Enviar email?</string>
+    <string name="valbtnlistar">LISTAR PERSONAS</string>
+    <string name="valbtnregistrar">REGISTRAR PERSONA</string>
 </resources>
